@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+                ddclient:
+                                image: znibb/ddclient-rpi:latest
+                                restart: unless-stopped
+                                container_name: ddclient
+                                volumes:
+                                        - ./ddclient.conf:/etc/ddclient.conf

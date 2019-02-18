@@ -1,29 +1,26 @@
-FROM resin/armhf-alpine:latest
-
-MAINTAINER Znibb <znibb@zkylark.se>
-
-# Run as root
-USER root
+FROM alpine:latest
+MAINTAINER pontus@zkylark.se
 
 # Install ddclient
 RUN apk add --no-cache \
-	make \
-	tar \
-	wget \
-	perl \
-	perl-digest-sha1 \
-	perl-io-socket-ssl \
-	perl-json
+  wget \
+  unzip \
+  make \
+  perl \
+  perl-utils \
+  perl-test-taint \
+  perl-netaddr-ip \
+  perl-net-ip \
+  perl-yaml \
+  perl-log-log4perl \
+  perl-io-socket-ssl \
+  perl-app-cpanminus && \ 
+  cpanm Data::Validate::IP && \
+  mkdir -p /var/cache/ddclient && \
+  mkdir /ddclient
 
-RUN \
-	curl -L http://cpanmin.us | perl - App::cpanminus && \
-	cpanm \
-		Data::Validate::IP \
-		JSON::Any
-
-RUN mkdir -p /var/cache/ddclient
-
-COPY files/ddclient /usr/sbin/ddclient
+COPY files/ddclient_v3.9.0 /usr/sbin/ddclient
+COPY files/start_ddclient.sh /ddclient/start_ddclient.sh
 
 # Run ddclient
-CMD ["/usr/sbin/ddclient", "-file", "/etc/ddclient.conf", "-verbose", "-debug", "-noquiet", "-foreground"]
+CMD ["/bin/sh", "/ddclient/start_ddclient.sh"]

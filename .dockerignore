@@ -1,1 +1,3 @@
-ddclient.conf
+*
+!Dockerfile
+!files/*

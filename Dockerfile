@@ -4,7 +4,6 @@ MAINTAINER pontus@zkylark.se
 # Install ddclient
 RUN apk add --no-cache \
   wget \
-  unzip \
   make \
   perl \
   perl-utils \

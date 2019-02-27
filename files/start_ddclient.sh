@@ -7,4 +7,4 @@ cp /etc/ddclient.conf /ddclient/ddclient.conf
 sed '/login=/r /run/secrets/ddclient_passwd' /ddclient/ddclient.conf | tee /ddclient/ddclient.conf
 
 # Start ddclient
-/usr/sbin/./ddclient -file /ddclient/ddclient.conf -foreground
+/usr/sbin/ddclient -file /ddclient/ddclient.conf -foreground -noquiet

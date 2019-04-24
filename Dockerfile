@@ -1,5 +1,5 @@
 FROM alpine:latest
-MAINTAINER pontus@zkylark.se
+MAINTAINER znibb@zkylark.se
 
 # Install ddclient
 RUN apk add --no-cache \

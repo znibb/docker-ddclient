@@ -8,5 +8,6 @@ custom=yes
 server=dyndns.loopia.se
 use=web, web=dyndns.loopia.se/checkip, web-skip='Current IP Address:'
 login=USERNAME
+password=PASSWORD
 wildcard=no
 EXAMPLE1.com,EXAMPLE2.se,EXAMPLE3.org

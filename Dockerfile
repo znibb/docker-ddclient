@@ -1,5 +1,6 @@
-FROM alpine:latest
-MAINTAINER znibb@zkylark.se
+FROM alpine:3.10
+
+LABEL maintainer="znibb: <znibb@zkylark.se>"
 
 # Install ddclient
 RUN apk add --no-cache \
@@ -19,7 +20,7 @@ RUN apk add --no-cache \
   mkdir /ddclient
 
 COPY files/ddclient_v3.9.0 /usr/sbin/ddclient
-COPY files/start_ddclient.sh /ddclient/start_ddclient.sh
+COPY files/ddclient.conf.example /ddclient/ddclient.conf
 
 # Run ddclient
-CMD ["/bin/sh", "/ddclient/start_ddclient.sh"]
+CMD ["/usr/sbin/ddclient", "-file", "/ddclient/ddclient.conf", "-foreground"]

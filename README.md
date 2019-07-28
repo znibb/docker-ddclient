@@ -5,7 +5,7 @@
 ## Before starting
 1. Download `docker-compose.yml`
 2. Copy `files/ddclient.conf.example` into `ddclient.conf` in the same directory as `docker-compose.yml`
-3. Update `ddclient.conf` with apropriate configuration.
+3. Update `ddclient.conf` with appropriate configuration.
 
 ## Starting
 docker-compose up -d

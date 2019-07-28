@@ -9,6 +9,7 @@ services:
       options:
         max-size: "200k"
         max-file: "10"
+    network_mode: bridge
     restart: unless-stopped
     volumes:
      - "/etc/timezone:/etc/timezone:ro"

@@ -1,5 +1,6 @@
 # ddclient in Docker
 - Linux x64
+- Based on alpine
 - Deployed with docker-compose
 
 ## Before starting

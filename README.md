@@ -1,17 +1,14 @@
 # ddclient in Docker
 - Linux x64
-- Deployed with Docker Swarm
+- Deployed with docker-compose
 
 ## Before starting
-1. Clone/download this repo: `git clone https://github.com/znibb/docker-ddclient`
-2. Create config: `docker config create ddclient_config_v1 path/to/ddclient.conf`  
-  - NOTE the config shall not contain a `password` entry!
-  - Example config in files/
-3. Set password: `echo "password='PASSWORD_HERE'" | docker secret create ddclient_passwd -`  
-  - NOTE the apostrophes around the actual password phrase!
+1. Download `docker-compose.yml`
+2. Copy `files/ddclient.conf.example` into `ddclient.conf` in the same directory as `docker-compose.yml`
+3. Update `ddclient.conf` with apropriate configuration.
 
 ## Starting
-Deploy: `docker stack deploy -c docker-stack.yml ddclient`
+docker-compose up -d
 
 ## Where can I get the latest version of ddclient
 Visit `https://github.com/ddclient/ddclient/releases`

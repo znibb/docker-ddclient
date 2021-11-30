@@ -4,6 +4,8 @@ services:
     image: znibb/ddclient:latest
     container_name: ddclient
     init: true
+    labels:
+     - "com.centurylinklabs.watchtower.enable=true"
     logging:
       driver: "json-file"
       options:

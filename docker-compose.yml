@@ -12,6 +12,5 @@ services:
     network_mode: bridge
     restart: unless-stopped
     volumes:
-     - "/etc/timezone:/etc/timezone:ro"
-     - "/etc/localtime:/etc/localtime:ro"
-     - "./ddclient.conf:/ddclient/ddclient.conf"
+     - /etc/timezone:/etc/timezone:ro
+     - ./ddclient.conf:/ddclient/ddclient.conf

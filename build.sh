@@ -9,6 +9,6 @@ USERNAME=znibb
 # Image name
 IMAGE=ddclient
 # Latest version pushed to Docker hub
-LATEST_VERSION=3
+LATEST_VERSION=4
 
 docker build --no-cache -t $USERNAME/$IMAGE:latest .

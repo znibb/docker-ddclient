@@ -23,4 +23,4 @@ COPY files/ddclient_v3.9.0 /usr/sbin/ddclient
 COPY files/ddclient.conf.example /ddclient/ddclient.conf
 
 # Run ddclient
-CMD ["/usr/sbin/ddclient", "-file", "/ddclient/ddclient.conf", "-foreground"]
+CMD ["/usr/sbin/ddclient", "-file", "/ddclient/ddclient.conf", "-foreground", "-syslog"]

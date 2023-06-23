@@ -1,6 +1,7 @@
-# Example config for use with Loopia DDNS
+# Example configs
 # Update entries in ALL CAPS
 
+# Loopia
 daemon=300
 ssl=yes
 protocol=dyndns2
@@ -11,3 +12,14 @@ login=USERNAME
 password=PASSWORD
 wildcard=no
 EXAMPLE1.com,EXAMPLE2.se,EXAMPLE3.org
+
+# Cloudflare
+#daemon=300
+#ssl=yes
+#protocol=cloudflare
+#use=web
+#server=api.cloudflare.com/client/v4
+#login=USERNAME
+#password=PASSWORD
+#zone=HOSTNAME.TLD
+#EXAMPLE1.com,EXAMPLE2.se,EXAMPLE3.org

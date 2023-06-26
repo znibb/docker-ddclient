@@ -1,18 +1,20 @@
-version: "3.7"
+version: "3"
 services:
   ddclient:
-    image: znibb/ddclient:latest
+    image: linuxserver/ddclient:latest
     container_name: ddclient
-    init: true
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Stockholm
     labels:
      - "com.centurylinklabs.watchtower.enable=true"
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "200k"
-        max-file: "10"
-    network_mode: bridge
+    networks:
+      - ddclient
     restart: unless-stopped
     volumes:
-     - /etc/timezone:/etc/timezone:ro
-     - ./ddclient.conf:/ddclient/ddclient.conf
+     - ./ddclient.conf:/config/ddclient.conf
+
+networks:
+  ddclient:
+    name: ddclient

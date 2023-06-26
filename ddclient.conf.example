@@ -1,0 +1,17 @@
+daemon=300
+verbose=no
+syslog=no
+ssl=yes
+protocol=cloudflare
+use=web, web=loopia
+server=api.cloudflare.com/client/v4
+# Domain 1
+login=<YOUR_EMAIL_HERE>
+password=<YOUR_API_KEY_HERE>
+zone=<YOUR_ZONE_HERE>
+<YOUR_DOMAINS_HERE>
+# Domain 2
+#login=<email>
+#password=<password>
+#zone=<zone>
+#domain1.se,domain2.com,*.domain3.io

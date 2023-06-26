@@ -1,15 +1,7 @@
-# ddclient in Docker
-- Linux x64
-- Based on alpine
-- Deployed with docker-compose
+# docker-ddclient
+Docker container for running ddclient to keep Cloudflare DNS records up to date
 
-## Before starting
-1. Download `docker-compose.yml`
-2. Copy `files/ddclient.conf.example` into `ddclient.conf` in the same directory as `docker-compose.yml`
-3. Update `ddclient.conf` with appropriate configuration.
-
-## Starting
-docker-compose up -d
-
-## Where can I get the latest version of ddclient
-Visit `https://github.com/ddclient/ddclient/releases`
+## Setup
+1. Make a copy of the example config: `cp ddclient.conf.example ddclient.conf`
+1. Input your personal information into the config file
+1. Run `docker-compose up` and check logs

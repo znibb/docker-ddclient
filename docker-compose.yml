@@ -3,6 +3,11 @@ services:
   ddclient:
     image: linuxserver/ddclient:latest
     container_name: ddclient
+    healthcheck:
+      test: ping -c 1 www.google.com || exit 1
+      interval: 30s
+      timeout: 10s
+      retries: 5
     environment:
       - PUID=1000
       - PGID=1000

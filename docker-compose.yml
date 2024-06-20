@@ -15,12 +15,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     labels:
      - "com.centurylinklabs.watchtower.enable=true"
-    networks:
-      - ddclient
+    network_mode: bridge
     restart: unless-stopped
     volumes:
      - ./ddclient.conf:/config/ddclient.conf
-
-networks:
-  ddclient:
-    name: ddclient

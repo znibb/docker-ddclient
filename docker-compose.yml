@@ -1,6 +1,6 @@
 services:
   ddclient:
-    image: linuxserver/ddclient:latest
+    image: linuxserver/ddclient:4.0.0
     container_name: ddclient
     healthcheck:
       test: ping -c 1 www.google.com || exit 1
@@ -13,8 +13,6 @@ services:
       - PUID=${PUID:?}
       - PGID=${PGID:?}
       - TZ=${TZ:-Etc/UTC}
-    labels:
-     - "com.centurylinklabs.watchtower.enable=true"
     network_mode: bridge
     restart: unless-stopped
     volumes:

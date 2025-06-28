@@ -14,4 +14,4 @@ zone=<YOUR_ZONE_HERE>
 #login=<email>
 #password=<password>
 #zone=<zone>
-#domain1.se,domain2.com,*.domain3.io
+#domain1.com,*.domain2.com

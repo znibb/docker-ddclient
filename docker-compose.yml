@@ -16,4 +16,9 @@ services:
     network_mode: bridge
     restart: unless-stopped
     volumes:
-     - ./ddclient.conf:/config/ddclient.conf
+      - config:/config
+      - ./ddclient.conf:/config/ddclient.conf
+
+volumes:
+  config:
+    name: ddclient-config
